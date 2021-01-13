@@ -1,0 +1,512 @@
+#main_1 {
+  background-color: #3fc1c9;
+}
+
+.img {
+  width: 7%;
+}
+
+.container {
+  margin: 10px;
+  padding-top: 20px;
+}
+
+.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.nav-item {
+  padding: 2px 10px;
+  font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.btn {
+  border-radius: 10px;
+}
+
+.button-2 {
+  padding: 8px 40px;
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 4% 10% 4% 10%;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 60px;
+  color: #fff;
+  padding-left: 30px;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+
+h5 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  padding-left: 30px;
+  margin-top: 2%;
+  margin-left: 5%;
+  align: center;
+}
+
+.button-1 {
+  padding: 8px 40px;
+  font-family: sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 4%;
+  margin-left: 9%;
+}
+
+.btn-sign-in {
+  font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.btn-sign-up {
+  font-family: SoDoSans, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 3px;
+  padding: 6px 15px;
+}
+
+.card {
+  margin: 20px 20px;
+}
+
+.img-1 {
+  margin-left: 45%;
+}
+
+/* card part */
+:root {
+  --background-dark: #2d3548;
+  --text-light: rgba(255, 255, 255, 0.6);
+  --text-lighter: rgba(255, 255, 255, 0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --width-container: 1900px;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  align-items: flex-start;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+  padding-top: 2px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+}
+
+@media(min-width: 540px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 960px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  list-style: none;
+  position: relative;
+}
+
+.card:before {
+  margin-top: 100%;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background {
+  background-size: cover;
+  background-position: center;
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transition:
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background {
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover>.card:not(:hover) .card__background {
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content {
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category {
+  color: #fff;
+  font-size: 1.0rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card__heading {
+  color: #fff;
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+
+/* List of Services Part */
+h4 {
+  background: #fc5185;
+  color: #fff;
+  width: 150px;
+  font-size: 24px;
+  height: 40px;
+  padding-left: 12px;
+  padding-top: 3px;
+  margin-top: 12px;
+}
+
+h4::after {
+  content: '';
+  border-top: 40px solid #fc5185;
+  border-right: 40px solid transparent;
+  position: relative;
+  left: 50px;
+  top: 39px;
+}
+
+.card-title {
+  color: black;
+  font-size: 140%;
+  font-style: normal;
+  align: center;
+}
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  min-height: 250px;
+  float: left;
+  margin: 3px;
+  padding: 3px;
+  margin-top: 1px;
+}
+
+/* Make the image fully responsive */
+.carousel-inner img {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15%;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=email] {
+  width: 85%;
+  padding: 12px 20px;
+  margin: 8px 20px;
+  display: inline-block;
+  border: 2px solid #787878;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-check-label {
+  margin-top: 20px;
+  margin-left: 43px;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 35px;
+  color: #c83f90;
+  padding-top: 40px;
+}
+
+h6 {
+  color: #41537a;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+.avatar {
+  height: 60%;
+  width: 60%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  margin: 4% auto 15% auto;
+  width: 30%;
+  padding-bottom: 30px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #41537a;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.sign_in {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 10px;
+  background-color: #d33f8d;
+  border: none;
+  color: white;
+  margin-top: 40px;
+  margin-left: 34%;
+  padding: 12px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+.sign_in:hover {
+  background-color: #5b48ad;
+  color: white;
+}
+
+.close:hover, .close:focus {
+  color: #111111;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  animation: zoom 0.6s
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+.s4-title {
+  font-size: 130%;
+}
+
+.testimonial {
+  background-color: #ee4959;
+}
+
+#main_3 {
+  margin-top: 18%;
+}
+
+.main_4_title {
+  color: white;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 60px;
+  margin-top: 5%;
+}
+
+.main_4_caption {
+  color: white;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  margin-bottom: 2%;
+}
+
+/* Footer Style */
+
+.col_white_amrc {
+  color: #FFF;
+}
+
+footer {
+  width: 100%;
+  background-color: #263238;
+  min-height: 250px;
+  padding: 10px 0px 25px 0px;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.pt2 {
+  padding-top: 40px;
+  margin-bottom: 20px;
+  margin-left: -30px;
+}
+
+footer p {
+  font-size: 13px;
+  color: #CCC;
+  padding-bottom: 0px;
+  margin-bottom: 8px;
+}
+
+.mb10 {
+  padding-bottom: 15px;
+}
+
+.mb13 {
+  font-color: white;
+}
+
+.footer_ul_amrc {
+  margin: 0px;
+  list-style-type: none;
+  color: white;
+  font-size: 14px;
+  padding: 0px 0px 10px 0px;
+}
+
+.footer_ul_amrc li {
+  padding: 0px 0px 5px 0px;
+}
+
+.footer_ul_amrc li a {
+  color: #CCC;
+}
+
+.footer_ul_amrc li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.fleft {
+  float: left;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+.footer_ul2_amrc {
+  margin: 0px;
+  list-style-type: none;
+  padding: 0px;
+}
+
+.footer_ul2_amrc li p {
+  display: table;
+}
+
+.footer_ul2_amrc li a:hover {
+  text-decoration: none;
+}
+
+.footer_ul2_amrc li i {
+  margin-top: 5px;
+}
+
+.bottom_border {
+  border-bottom: 1px solid #323f45;
+  padding-bottom: 20px;
+}
+
+.foote_bottom_ul_amrc {
+  list-style-type: none;
+  padding: 0px;
+  display: table;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+
+.foote_bottom_ul_amrc li {
+  display: inline;
+}
+
+.foote_bottom_ul_amrc li a {
+  color: #999;
+  margin: 0 12px;
+}
+
+.social_footer_ul {
+  display: table;
+  margin: 15px auto 0 auto;
+  list-style-type: none;
+}
+
+.social_footer_ul li {
+  padding-left: 20px;
+  padding-top: 10px;
+  float: left;
+}
+
+.social_footer_ul li a {
+  color: #CCC;
+  border: 1px solid #CCC;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.social_footer_ul li i {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
