@@ -34,25 +34,12 @@
   <section id="main_1">
     <div class="container-fluid">
       <div class="first-part">
-        <div class="bar">
-          <nav class="navbar navbar-expand-sm navbar-dark">
-            <img class="img" src="mainImages/company_logo.png" alt="shopping picture">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a href="/login" type="button" class="btn btn-sign-in">Sign In</a>
-              </li>
-              <li class="nav-item">
-                <a href="/register" type="button" class="btn btn-outline-danger btn-sign-up">Sign Up</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <%- include("header_second"); -%>
         <div class="container">
           <div class="row">
             <div class="col-lg-8">
               <h1>Shop around for services</h1>
-              <h5>You have skills? Want to Post Your Services?<br>Come and join us today!</h5>
-              <a href="/register" type="button" class="btn btn-danger button-1">Join Now!</a>
+              <h5>Thank you for joining us today. Let's start.<br>Choose which one for you!</h5>
             </div>
             <div class="col-lg-4">
               <img class="img-1" src="mainImages/shopping.png" alt="shopping picture">
@@ -66,7 +53,7 @@
   <section id="main_2">
     <div class="container-fluid">
       <div class="card-grid">
-        <a class="card" href="/register">
+        <a class="card" href="/personal">
           <div class="card__background">
             <img src="mainImages/personal.jpg" style="width: 100%;" alt="home picture">
           </div>
@@ -75,7 +62,7 @@
             <h3 class="card__heading">Personal Services</h3>
           </div>
         </a>
-        <a class="card" href="/register">
+        <a class="card" href="/home">
           <div class="card__background">
             <img src="mainImages/home_services.jpg" style="width: 100%;" alt="home picture">
           </div>
@@ -84,7 +71,7 @@
             <h3 class="card__heading">Home Services</h3>
           </div>
         </a>
-        <a class="card" href="/register">
+        <a class="card" href="/children">
           <div class="card__background">
             <img src="mainImages/find-good-babysitter.jpg" style="width: 100%;" alt="home picture">
           </div>
@@ -93,7 +80,7 @@
             <h3 class="card__heading">Children Services</h3>
           </div>
           </li>
-          <a class="card" href="/register">
+          <a class="card" href="/event">
             <div class="card__background">
               <img src="mainImages/event.jpg" style="width: 100%;" alt="home picture">
             </div>

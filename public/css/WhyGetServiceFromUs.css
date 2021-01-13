@@ -1,0 +1,39 @@
+#main_3 {
+  background-color: #3fc1c9;
+  padding-bottom: 3%;
+}
+
+.main_3_title {
+  color: white;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 60px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.footer-title
+{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 30px;
+  color: #fff;
+  align:center;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.footer-desc
+{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  color: #fff;
+  align:center;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
