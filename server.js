@@ -2,6 +2,23 @@
 require('dotenv').config()
 
 var pass = " ";
+var valid = " ";
+var array = [];
+var passwrong = " ";
+
+var nameofUser = " ";
+var UserID = " ";
+var UserEmail = " ";
+var UserFullName = " ";
+var UserPassword = " ";
+var UserAddr1 = " ";
+var UserAddr2 = " ";
+var UserCity = " ";
+var UserState = " ";
+var UserPoscode = " ";
+var UserGender = " ";
+var UserPhone = " ";
+var UserSummary = " ";
 const bodyParser = require("body-parser");;
 const express = require("express");
 const https = require("https");
@@ -28,7 +45,16 @@ mongoose.connect("mongodb+srv://group-20-web:Try12345@cluster20.sx3at.mongodb.ne
 const dataUser = new mongoose.Schema({
   userName: String,
   userEmail: String,
-  userPassword: String
+  userPassword: String,
+  fullName: String,
+  userAddress1: String,
+  userAddress2: String,
+  userCity: String,
+  userState: String,
+  userPostcode: String,
+  userGender: String,
+  userPhone: String,
+  userSummary: String
 });
 
 const User = mongoose.model("UserData", dataUser);
@@ -59,7 +85,16 @@ app.post('/register', async (req, res) => {
 
     userName: req.body.name,
     userEmail: req.body.email,
-    userPassword: hashedPassword
+    userPassword: hashedPassword,
+    fullName: " ",
+    userAddress1: " ",
+    userAddress2: " ",
+    userCity: " ",
+    userState: " ",
+    userPostcode: " ",
+    userGender: " ",
+    userPhone: " ",
+    userSummary: " "
   });
 
   user.save();
@@ -85,7 +120,20 @@ app.post('/login', function(req, res) {
         bcrypt.compare(userpassword, foundUser.userPassword, function(err, result) {
           // result == true
           if(result === true ){
-            res.render("UserProfile");
+            nameofUser = foundUser.userName;
+            UserID = foundUser._id;
+            UserEmail = useremail;
+            UserPassword = userpassword;
+            UserFullName = foundUser.fullName;
+            UserAddr1 = foundUser.userAddress1;
+            UserAddr2 = foundUser.userAddress2;
+            UserCity = foundUser.userCity;
+            UserState = foundUser.userState;
+            UserPoscode = foundUser.userPostcode;
+            UserGender = foundUser.userGender;
+            UserPhone = foundUser.userPhone;
+            UserSummary = foundUser.userSummary;
+            res.redirect("UserProfile");
           }else{
             pass = "Please enter again password";
             res.redirect("login");
@@ -102,7 +150,8 @@ app.post('/login', function(req, res) {
 /////////////////User profile///////////////////////
 
 app.get("/UserProfile", function(req, res){
-  res.render('UserProfile.ejs')
+
+  res.render('UserProfile.ejs', {Name: nameofUser, Email:UserEmail, FullName:UserFullName, Add1:UserAddr1, Add2:UserAddr2, City:UserCity, State:UserState, Postcode:UserPoscode, Gender:UserGender, PhoneNum:UserPhone, Summary:UserSummary});
 });
 
 ////////////////////////////////////////////////////
@@ -115,7 +164,7 @@ app.delete('/logout', (req, res) => {
 //////////// Personal Service Part/////////////////
 
 app.get('/personal', (req, res) => {
-  res.render('Personal_Services.ejs')
+  res.render('Personal_Services.ejs', {Naming: nameofUser})
 })
 
 ///////////////////////////////////////////////////
@@ -123,7 +172,7 @@ app.get('/personal', (req, res) => {
 //////////// Home Service Part/////////////////
 
 app.get('/home', (req, res) => {
-  res.render('Home_Services.ejs')
+  res.render('Home_Services.ejs', {Naming: nameofUser})
 })
 
 ///////////////////////////////////////////////////
@@ -131,7 +180,7 @@ app.get('/home', (req, res) => {
 //////////// Children Service Part/////////////////
 
 app.get('/children', (req, res) => {
-  res.render('Children_Services.ejs')
+  res.render('Children_Services.ejs', {Naming: nameofUser})
 })
 
 ///////////////////////////////////////////////////
@@ -139,7 +188,7 @@ app.get('/children', (req, res) => {
 //////////// Event Service Part/////////////////
 
 app.get('/event', (req, res) => {
-  res.render('Event_Services.ejs')
+  res.render('Event_Services.ejs', {Naming: nameofUser})
 })
 
 ///////////////////////////////////////////////////
@@ -147,18 +196,162 @@ app.get('/event', (req, res) => {
 //// After sign in user can go to main menu //////
 
 app.get('/goMainMenu', (req, res) => {
-  res.render('mainMenuAfterSignIn.ejs')
+  res.render('mainMenuAfterSignIn.ejs', {Naming: nameofUser})
 })
 
 ///////////////////////////////////////////////////
 
-//// After sign in user can go to main menu //////
+//// Pass username to header //////
 
-app.get('/mainMenuAfterSignIn', (req, res) => {
-  res.render('mainMenuAfterSignIn.ejs')
+app.get('/headerSecond', (req, res) => {
+  res.render('headerSecond.ejs', {Naming: nameofUser})
 })
 
 ///////////////////////////////////////////////////
+
+app.get('/updateInfo', (req, res) => {
+
+  res.redirect('/securitylogin')
+})
+
+app.post('/updateInfo', function(req, res) {
+
+  User.updateOne({_id:UserID}, {fullName: req.body.inputFullName}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userName: req.body.inputName4}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userAddress1: req.body.inputAddress}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userAddress2: req.body.inputAddress2}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userCity: req.body.inputCity}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userState: req.body.inputState}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userPostcode: req.body.inputZip}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userGender: req.body.inputGender}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userPhone: req.body.inputPhone}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  User.updateOne({_id:UserID}, {userSummary: req.body.exampleFormControlTextarea1}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
+  res.redirect('/updateInfo')
+
+});
+
+app.get('/securitylogin', (req, res) => {
+  res.render('securitylogin.ejs', {wrongemail: passwrong})
+})
+
+app.post('/securitylogin', function(req, res) {
+
+  const useremail = req.body.emailvalid;
+  const userpassword = req.body.passwordvalid;
+
+  if(useremail !== UserEmail){
+    passwrong = "Wrong email enter for validation"
+    res.redirect("/securitylogin");
+  }else{
+    User.findOne({userEmail: useremail}, function(err, foundUser){
+
+      if(err){
+        console.log(err);
+      }else{
+        if(foundUser){
+          bcrypt.compare(userpassword, foundUser.userPassword, function(err, result) {
+            // result == true
+            if(result === true ){
+              nameofUser = foundUser.userName;
+              UserID = foundUser._id;
+              UserEmail = useremail;
+              UserPassword = userpassword;
+              UserFullName = foundUser.fullName;
+              UserAddr1 = foundUser.userAddress1;
+              UserAddr2 = foundUser.userAddress2;
+              UserCity = foundUser.userCity;
+              UserState = foundUser.userState;
+              UserPoscode = foundUser.userPostcode;
+              UserGender = foundUser.userGender;
+              UserPhone = foundUser.userPhone;
+              UserSummary = foundUser.userSummary;
+              res.redirect("UserProfile");
+            }else{
+              passwrong = "Please enter again password";
+              res.redirect("/securitylogin");
+            }
+          });
+        }
+      }
+    });
+  }
+
+});
+
+/////////////////Log Out/////////////////////
+app.get('/logout', (req, res) => {
+  res.redirect('/')
+})
 
 /////////////////Start server/////////////////////
 app.listen(process.env.PORT || 8000, function() {

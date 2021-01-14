@@ -1,151 +1,236 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <%- include("LinkDesign"); -%>
+  <title>Profile</title>
 
-  <link href="css/UserProfile.css" rel="stylesheet">
-  <title>Header</title>
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
-  <body>
-    <%- include("header"); -%>
-    <body action="/Service_Provider_Profile" method="POST">
-      <div class="container-fluid">
-        <div class="row">
-          <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-            <div class="position-sticky pt-3">
-              <ul class="nav flex-column">
-                <li class="nav-item">
-                  <a class="nav-link active dashboard" aria-current="page" href="#">
-                    <span data-feather="home"></span>
-                    Dashboard
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="file"></span>
-                    Personal Information
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="shopping-cart"></span>
-                    Services Information
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="users"></span>
-                    Post Services
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="bar-chart-2"></span>
-                    Services Status
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="layers"></span>
-                    Services History
-                  </a>
-                </li>
-              </ul>
 
-              <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                <span>Update Profile</span>
-                <a class="link-secondary" href="#" aria-label="Add a new report">
-                  <span data-feather="plus-circle"></span>
-                </a>
-              </h6>
-              <ul class="nav flex-column mb-2">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="file-text"></span>
-                    Personal Information
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    <span data-feather="file-text"></span>
-                    Services Information
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+<body>
+
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+  <header id="header">
+    <div class="d-flex flex-column">
+      <div class="profile">
+        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="/goMainMenu"><%= Name %></a></h1>
       </div>
+      <nav class="nav-menu">
+        <br>
+        <h5 class="text-light" align="center" style="margin-bottom: 10px;"><b>DASHBOARD</b></h5>
+        <ul>
+          <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#personalInfo"><i class="bx bx-user"></i> <span>Personal Information</span></a></li>
+          <li><a href="#serviceInfo"><i class="bx bx-file-blank"></i> <span>Services Information</span></a></li>
+          <li><a href="#uploadService"><i class="bx bx-book-content"></i>Upload Services</a></li>
+        </ul>
+        <br>
+        <h5 class="text-light" align="center" style="margin-bottom: 10px;"><b>UPDATE</b></h5>
+        <ul>
+          <li><a href="#updatePersonalInfo"><i class="bx bx-server"></i>Personal Information</a></li>
+          <li><a href="#updateServiceInfo"><i class="bx bx-envelope"></i>Service Information</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+    </div>
+  </header>
 
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 middle-part">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Daily Services</h1>
+      <p>Hire the best <span class="typed" data-typed-items="Home Cleaner, Electrician, Plumber, Photographer"></span></p>
+      <h2>The easiest way to hire the best and
+        <br> reliable service professionals
+        <br>for your home.
+      </h2>
+      <br>
+      <a href="/goMainMenu" type="button" class="btn btn-outline-warning btn-lg buttonBook">Book Service</a>
+      <a href="#uploadService" type="button" class="btn btn-secondary btn-danger btn-lg">Post Service</a>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="personalInfo" class="personalInfo">
+      <div class="container">
+        <div class="section-title">
+          <h2>Personal Information</h2>
+          <p>"<%= Summary %>"</p>
         </div>
-        <div class="container">
-          <div class="row profile">
-            <div class="col-md-3">
-              <div class="profile-sidebar">
-                <!-- SIDEBAR USERPIC -->
-                <div class="profile-userpic">
-                  <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" class="img-responsive" alt="">
-                </div>
-                <!-- END SIDEBAR USERPIC -->
-                <!-- SIDEBAR USER TITLE -->
-                <div class="profile-usertitle">
-                  <div class="profile-usertitle-name">
-                    Muhammad Fakhruddin
-                  </div>
-                  <div class="profile-usertitle-job">
-                    Plumber
-                  </div>
-                </div>
-                <!-- END SIDEBAR USER TITLE -->
-                <!-- SIDEBAR BUTTONS -->
-                <div class="profile-userbuttons">
-                  <button type="button" class="btn btn-success btn-sm">Update</button>
-                  <button type="button" class="btn btn-danger btn-sm">Log Out</button>
-                </div>
-                <!-- END SIDEBAR BUTTONS -->
-                <!-- SIDEBAR MENU -->
-                <div class="profile-usermenu">
-                  <ul class="nav">
-                    <li class="active">
-                      <a href="#">
-                        <i class="glyphicon glyphicon-home"></i>
-                        Overview </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="glyphicon glyphicon-user"></i>
-                        Account Settings </a>
-                    </li>
-                    <li>
-                      <a href="#" target="_blank">
-                        <i class="glyphicon glyphicon-ok"></i>
-                        Tasks </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="glyphicon glyphicon-flag"></i>
-                        Help </a>
-                    </li>
-                  </ul>
-                </div>
-                <!-- END MENU -->
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>UI/UX Designer &amp; Web Developer.</h3>
+            <p class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="icofont-rounded-right"></i> <strong>Name : </strong><%= FullName %></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Email : </strong><%=Email %></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Gender : </strong><%= Gender %></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Phone : </strong><%= PhoneNum %></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="icofont-rounded-right"></i> <strong>Address : </strong><%= Add1 %>, <%= Add2 %></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Postcode : </strong><%= Postcode %></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>City : </strong><%= City %></li>
+                  <li><i class="icofont-rounded-right"></i> <strong>State : </strong><%= State %></li>
+                </ul>
               </div>
             </div>
-            <div class="col-md-9">
-              <div class="profile-content">
-                Name: Muhammad Fakhruddin Bin Norulhaizy
-              </div>
-            </div>
+            <p>
+              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+            </p>
           </div>
         </div>
+      </div>
+    </section>
+    <!-- End Personal Info Section -->
 
-        <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+    <!-- ======= Service Info Section ======= -->
+    <section id="serviceInfo" class="serviceInfo">
+      <div class="container">
+        <div class="section-title">
+          <h2>Service Information</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
+            quidem hic quas.</p>
+        </div>
+      </div>
+    </section>
+    <!-- End Service Info Section -->
 
-  </body>
+    <!-- ======= Upload Service Section ======= -->
+    <section id="uploadService" class="uploadService section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Upload Service</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
+            quidem hic quas.</p>
+        </div>
+      </div>
+      </div>
+    </section>
+    <!-- End Upload Service Section -->
+
+    <!-- ======= Update Personal information Section ======= -->
+    <section id="updatePersonalInfo" class="updatePersonalInfo section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Update Personal information</h2>
+          <form class="row g-3" action="/updateInfo" method="POST">
+            <div class="col-md-6">
+              <label for="inputFullName" class="form-label">Full Name</label>
+              <input type="name" class="form-control" id="inputFullName" placeholder="<%= FullName %>" name="inputFullName" required>
+            </div>
+            <div class="col-md-6">
+              <label for="inputName4" class="form-label">Name</label>
+              <input type="name" class="form-control" id="inputName4" placeholder="<%= Name %>" name="inputName4" required>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address Line 1</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="<%= Add1 %>" name="inputAddress" required>
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Address Line 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="<%= Add2 %>" name="inputAddress2" required>
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="<%= City %>" name="inputCity" required>
+            </div>
+            <div class="col-md-2">
+              <label for="inputState" class="form-label">State</label>
+              <input type="text" class="form-control" id="inputState" placeholder="<%= State %>" name="inputState" required>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Postcode</label>
+              <input type="text" class="form-control" id="inputZip" placeholder="<%= Postcode %>" name="inputZip" required>
+            </div>
+            <div class="col-md-3">
+              <label for="inputGender" class="form-label">Gender</label>
+              <input type="text" class="form-control" id="inputGender" placeholder="<%= Gender %>" name="inputGender" required>
+            </div>
+            <div class="col-md-3">
+              <label for="inputPhone" class="form-label">Phone Number</label>
+              <input type="text" class="form-control" id="inputPhone" placeholder="<%= PhoneNum %>" name="inputPhone" required>
+            </div>
+            <div class="col-md-12">
+              <label for="exampleFormControlTextarea1" class="form-label">Short Summary About Yourself</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="<%= Summary %>" name="exampleFormControlTextarea1" rows="3" required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-danger butupdate">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- End Update Personal information Section -->
+
+    <!-- ======= Update Service Info Section ======= -->
+    <section id="updateServiceInfo" class="updateServiceInfo section-bg">
+      <div class="container">
+        <div class="section-title">
+          <h2>Update Service Information</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
+            quidem hic quas.</p>
+        </div>
+      </div>
+    </section>
+    <!-- End Update Service Info Section -->
+  </main>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>DailyServices</span></strong>
+      </div>
+      <div class="credits">
+        Designed by <a href="">DailyServices</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
 </html>

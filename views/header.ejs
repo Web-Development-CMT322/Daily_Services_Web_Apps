@@ -4,28 +4,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/User_Profile_Header.css" rel="stylesheet">
   <title>Header</title>
 </head>
 
 <body>
   <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/goMainMenu"><img class="img" src="mainImages/company_logo.png" href="#" alt="shopping picture"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <a class="navbaritem" href="/goMainMenu"><img class="img" src="mainImages/company_logo.png" href="#" alt="shopping picture"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-      <ul class="navbar-nav right-item">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <li class="nav-item dropdown dropdown-style">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#fff;">
-            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
-            Fakhruddin
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <ul class="navbar-nav right-item">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <li class="nav-item active homepart">
+        <a class="nav-link" href="/goMainMenu">
+          <i class="fa fa-home"></i>
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item dropdown dropdown-style">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#fff;">
+          <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
+          Fakhruddin
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
 </body>
 </html>
