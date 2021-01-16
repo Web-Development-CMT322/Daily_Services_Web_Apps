@@ -32,14 +32,37 @@ h1 {
   margin-bottom: 30px;
 }
 
+h5 {
+  font-size: 15px;
+  color: #4c4c4c;
+  text-align: center;
+}
+
+
 .img {
   width: 21%;
 }
 
+
+.signin-image
+{
+margin-top: 15px;
+margin-left: 45px;
+
+}
+
+.signin-image-link
+{
+font-size: 14px;
+color: #222;
+display: block;
+text-align: center;
+}
+
 .testbox {
   margin: 60px auto;
-  width: 343px;
-  height: 450px;
+  width: 700px;
+  height: 460px;
   -webkit-border-radius: 8px/7px;
   -moz-border-radius: 8px/7px;
   border-radius: 8px/7px;
@@ -48,7 +71,7 @@ h1 {
   -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   border: solid 1px #cbc9c9;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 input[type=radio] {
@@ -132,4 +155,27 @@ input[type=text],input[type=password],input[type=email]{
 
 input[type=password]{
   margin-bottom: 25px;
+}
+
+/* input icon */
+.input-icons i {
+  position: absolute;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  color: #3a57af;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
 }
