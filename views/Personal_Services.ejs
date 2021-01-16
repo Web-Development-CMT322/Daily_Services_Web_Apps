@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <%- include("LinkDesign"); -%>
   <link rel="stylesheet" href="css/Home_Services.css">
-  <title>Home Services</title>
+  <title>Personal Services</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <div class="col-lg-6">
           <h1>Personal Services</h1>
           <h5>Daily Services is the leading web application to find local service providers like cleaners, part time maids, electricians, air conditioning experts, plumbers and other home pros.
-          Use our app to book reliable professionals at the tap of a button. All our service providers are vetted.
+            Use our app to book reliable professionals at the tap of a button. All our service providers are vetted.
           </h5>
           <h5>Need helper? Book your service now!</h5>
         </div>
@@ -26,9 +26,35 @@
       </div>
     </div>
   </section>
-  <%- include('DisplayListServices'); -%>
-
+  <section id="main_2">
+    <h4>Services</h4>
+    <div class="container">
+      <div class="card-deck">
+        <div class="card-grid">
+          <% for(var i=0; i<PersonalList.length; i++){  %>
+          <div class="card" style="width: 18rem; margin-top:30px; margin-left: 60px;">
+            <div class="card-body">
+              <p><img src="<%= PersonalList[i].serviceImage %>" class="rounded mx-auto d-block" style="width:200px;height:200px;" alt="..."></p>
+              <p align="center" class="card-title"  style="margin-top: 20px; font-family: Arial; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 500; color:black;"><%= PersonalList[i].serviceName %></p>
+              <p style="color:#dc3545; font-family: Arial; font-weight: 600; margin-top: 20px; font-size: 14px;">Price: RM <%= PersonalList[i].servicePrice %></p>
+              <p class="card-text" style="margin-top: 10px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500; line-height: 1.4;"><%= PersonalList[i].serviceSummary %></p>
+            </div>
+            <div class="givestyle" style="line-height: 1.0; margin-top: 10px;">
+              <p class="card-text" style="margin-bottom: 5px; margin-left:20px; color:#dc3545; font-family: Arial; font-size: 14px; font-weight: 500;">I am available at <%= PersonalList[i].serviceTime %></p>
+              <p class="card-text" style="margin-bottom: 5px; margin-left:20px; color:#dc3545; font-family: Arial; font-size: 14px; font-weight: 500;">You can call me at <%= PersonalList[i].servicePhone %></p>
+              <p style="margin-bottom: 10px; margin-left:20px; color:#964b00; font-family: Arial; font-size: 13px; font-weight: 500;">Area: <%= PersonalList[i].serviceArea %>, <%= PersonalList[i].serviceState %> </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"><%= PersonalList[i].serviceType %></small>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </section>
   <%- include('WhyGetServiceFromUs'); -%>
 </body>
-  <%- include('footer'); -%>
+<%- include('footer'); -%>
+
 </html>

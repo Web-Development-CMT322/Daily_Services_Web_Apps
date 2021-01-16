@@ -168,15 +168,6 @@ app.post('/login', function(req, res) {
             UserPhone = foundUser.userPhone;
             UserSummary = foundUser.userSummary;
             Userprofile = foundUser.userProfile;
-            // ServiceType = foundUser.serviceTypes;
-            // ServiceName = foundUser.serviceNames;
-            // ServiceSummary = foundUser.serviceSummarys;
-            // ServiceArea = foundUser.serviceAreas;
-            // ServiceState = foundUser.serviceStates;
-            // ServicePrice = foundUser.servicePrices;
-            // ServiceTime = foundUser.serviceTimes;
-            // ServicePhone = foundUser.servicePhones;
-            // ServiceImage = foundUser.serviceImages;
 
             res.redirect("UserProfile");
           }else{
@@ -226,15 +217,23 @@ app.delete('/logout', (req, res) => {
 //////////// Personal Service Part/////////////////
 
 app.get('/personal', (req, res) => {
-  res.render('Personal_Services.ejs', {Naming: nameofUser})
-})
+
+  Service.find({serviceType:"Personal Services"}, function(err, foundItemMain){
+      console.log(foundItemMain);
+      res.render('Personal_Services.ejs', {PersonalList:foundItemMain, Naming: nameofUser});
+  })
+});
 
 ///////////////////////////////////////////////////
 
 //////////// Home Service Part/////////////////
 
 app.get('/home', (req, res) => {
-  res.render('Home_Services.ejs', {Naming: nameofUser})
+
+  Service.find({serviceType:"Home Services"}, function(err, foundItemHome){
+      console.log(foundItemHome);
+      res.render('Home_Services.ejs', {HomeList:foundItemHome, Naming: nameofUser});
+  })
 })
 
 ///////////////////////////////////////////////////
@@ -242,7 +241,11 @@ app.get('/home', (req, res) => {
 //////////// Children Service Part/////////////////
 
 app.get('/children', (req, res) => {
-  res.render('Children_Services.ejs', {Naming: nameofUser})
+
+  Service.find({serviceType:"Children Services"}, function(err, foundItemChild){
+      console.log(foundItemChild);
+      res.render('Children_Services.ejs', {ChildList:foundItemChild, Naming: nameofUser});
+  })
 })
 
 ///////////////////////////////////////////////////
@@ -250,7 +253,11 @@ app.get('/children', (req, res) => {
 //////////// Event Service Part/////////////////
 
 app.get('/event', (req, res) => {
-  res.render('Event_Services.ejs', {Naming: nameofUser})
+
+  Service.find({serviceType:"Event Services"}, function(err, foundItemEvent){
+      console.log(foundItemEvent);
+      res.render('Event_Services.ejs', {EventList:foundItemEvent, Naming: nameofUser});
+  })
 })
 
 ///////////////////////////////////////////////////
@@ -406,15 +413,6 @@ app.post('/securitylogin', function(req, res) {
               UserPhone = foundUser.userPhone;
               UserSummary = foundUser.userSummary;
               Userprofile = foundUser.userProfile;
-              // ServiceType = foundUser.serviceTypes;
-              // ServiceName = foundUser.serviceNames;
-              // ServiceSummary = foundUser.serviceSummarys;
-              // ServiceArea = foundUser.serviceAreas;
-              // ServiceState = foundUser.serviceStates;
-              // ServicePrice = foundUser.servicePrices;
-              // ServiceTime = foundUser.serviceTimes;
-              // ServicePhone = foundUser.servicePhones;
-              // ServiceImage = foundUser.serviceImages;
 
               res.redirect("UserProfile");
             }else{
