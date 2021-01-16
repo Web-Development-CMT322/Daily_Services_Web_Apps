@@ -132,6 +132,7 @@ app.post('/register', async (req, res) => {
   });
 
   user.save();
+
   res.redirect('/login')
 
 })
