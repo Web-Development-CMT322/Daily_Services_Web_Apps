@@ -5,6 +5,7 @@ var pass = " ";
 var valid = " ";
 var array = [];
 var passwrong = " ";
+var sendError = " ";
 
 var nameofUser = " ";
 var UserID = " ";
@@ -19,6 +20,17 @@ var UserPoscode = " ";
 var UserGender = " ";
 var UserPhone = " ";
 var UserSummary = " ";
+
+var ServiceType = " ";
+var ServiceName = " ";
+var ServiceSummary = " ";
+var ServiceArea = " ";
+var ServiceState = " ";
+var ServicePrice = " ";
+var ServiceTime = " ";
+var ServicePhone = " ";
+var ServiceImage = " ";
+
 const bodyParser = require("body-parser");;
 const express = require("express");
 const https = require("https");
@@ -27,6 +39,9 @@ const app = express();
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
+const multer = require('multer');
+const GridFsStorage = require('multer-gridfs-storage');
+const Grid = require('gridfs-stream');
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
@@ -37,6 +52,7 @@ const mongoose = require('mongoose')
 //Start MongoDB
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(express.static(path.join(__dirname, '..', 'public' )))
 mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb+srv://group-20-web:Try12345@cluster20.sx3at.mongodb.net/userData?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true })
@@ -54,10 +70,25 @@ const dataUser = new mongoose.Schema({
   userPostcode: String,
   userGender: String,
   userPhone: String,
-  userSummary: String
+  userSummary: String,
+
+});
+
+const dataService = new mongoose.Schema({
+  serviceEmail: String,
+  serviceType: String,
+  serviceName: String,
+  serviceSummary: String,
+  serviceArea: String,
+  serviceState: String,
+  servicePrice: String,
+  serviceTime: String,
+  servicePhone: String,
+  serviceImage: String
 });
 
 const User = mongoose.model("UserData", dataUser);
+const Service = mongoose.model("ServiceData", dataService);
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -94,7 +125,8 @@ app.post('/register', async (req, res) => {
     userPostcode: " ",
     userGender: " ",
     userPhone: " ",
-    userSummary: " "
+    userSummary: " ",
+
   });
 
   user.save();
@@ -133,6 +165,17 @@ app.post('/login', function(req, res) {
             UserGender = foundUser.userGender;
             UserPhone = foundUser.userPhone;
             UserSummary = foundUser.userSummary;
+
+            // ServiceType = foundUser.serviceTypes;
+            // ServiceName = foundUser.serviceNames;
+            // ServiceSummary = foundUser.serviceSummarys;
+            // ServiceArea = foundUser.serviceAreas;
+            // ServiceState = foundUser.serviceStates;
+            // ServicePrice = foundUser.servicePrices;
+            // ServiceTime = foundUser.serviceTimes;
+            // ServicePhone = foundUser.servicePhones;
+            // ServiceImage = foundUser.serviceImages;
+
             res.redirect("UserProfile");
           }else{
             pass = "Please enter again password";
@@ -151,7 +194,11 @@ app.post('/login', function(req, res) {
 
 app.get("/UserProfile", function(req, res){
 
-  res.render('UserProfile.ejs', {Name: nameofUser, Email:UserEmail, FullName:UserFullName, Add1:UserAddr1, Add2:UserAddr2, City:UserCity, State:UserState, Postcode:UserPoscode, Gender:UserGender, PhoneNum:UserPhone, Summary:UserSummary});
+  Service.find({serviceEmail:UserEmail}, function(err, foundItems){
+      console.log(foundItems);
+      console.log(UserEmail);
+      res.render('UserProfile.ejs', {ServicesList:foundItems, Name: nameofUser, Email:UserEmail, FullName:UserFullName, Add1:UserAddr1, Add2:UserAddr2, City:UserCity, State:UserState, Postcode:UserPoscode, Gender:UserGender, PhoneNum:UserPhone, Summary:UserSummary});
+  })
 });
 
 ////////////////////////////////////////////////////
@@ -335,6 +382,17 @@ app.post('/securitylogin', function(req, res) {
               UserGender = foundUser.userGender;
               UserPhone = foundUser.userPhone;
               UserSummary = foundUser.userSummary;
+
+              // ServiceType = foundUser.serviceTypes;
+              // ServiceName = foundUser.serviceNames;
+              // ServiceSummary = foundUser.serviceSummarys;
+              // ServiceArea = foundUser.serviceAreas;
+              // ServiceState = foundUser.serviceStates;
+              // ServicePrice = foundUser.servicePrices;
+              // ServiceTime = foundUser.serviceTimes;
+              // ServicePhone = foundUser.servicePhones;
+              // ServiceImage = foundUser.serviceImages;
+
               res.redirect("UserProfile");
             }else{
               passwrong = "Please enter again password";
@@ -348,6 +406,35 @@ app.post('/securitylogin', function(req, res) {
 
 });
 
+/////////////// Upload services ////////////////
+
+app.post('/uploadService', async (req, res) => {
+
+  Service.findOne({serviceEmail: UserEmail}, function(err, foundUser){
+
+    const service = new Service({
+
+      serviceType: req.body.servicetype,
+      serviceName: req.body.servicename,
+      serviceSummary: req.body.servicesum,
+      serviceArea: req.body.servicearea,
+      serviceState: req.body.servicestate,
+      servicePrice: req.body.serviceprice,
+      serviceTime: req.body.servicetime,
+      servicePhone: req.body.servicephone,
+      serviceImage: req.body.linkService,
+      serviceEmail: UserEmail,
+
+    });
+    service.save();
+    res.redirect("UserProfile");
+
+  });
+});
+
+app.get('/errorpage', (req, res) => {
+  res.render('/pop-up-error.ejs')
+})
 /////////////////Log Out/////////////////////
 app.get('/logout', (req, res) => {
   res.redirect('/')
