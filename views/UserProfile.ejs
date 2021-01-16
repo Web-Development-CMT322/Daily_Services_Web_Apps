@@ -137,6 +137,20 @@
                     </div>
                   </form>
                   <% } %>
+                <div class="card-body">
+                  <p><img src="<%= ServicesList[i].serviceImage %>" class="rounded mx-auto d-block" style="width:200px;height:200px;" alt="..."></p>
+                  <p align="center" class="card-title" style="margin-top: 20px; font-family: Montserrat; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 500; color:black;"><%= ServicesList[i].serviceName %></p>
+                  <p style="color:#dc3545; font-family: Arial; font-weight: 600; margin-top: 20px; font-size: 14px;">Price: RM <%= ServicesList[i].servicePrice %></p>
+                  <p class="card-text" style="margin-top: 10px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;"><%= ServicesList[i].serviceSummary %></p>
+                  <p class="card-text" style="margin-top: 2px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;">I am available at <%= ServicesList[i].serviceTime %></p>
+                  <p class="card-text" style="margin-top: 2px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;">You can call me at <%= ServicesList[i].servicePhone %></p>
+                  <p style="margin-top: 10px; color:#964b00; font-family: Arial; font-size: 13px; font-weight: 500;">Area: <%= ServicesList[i].serviceArea %>, <%= ServicesList[i].serviceState %> </p>
+                </div>
+                  <input type="hidden" name="deleteItem" value="<%= ServicesList[i]._id %>">
+                  <button type="submit" class="btn btn-danger button-2">Delete</button>
+                <div class="card-footer">
+                  <small class="text-muted"><%= ServicesList[i].serviceType %></small>
+>>>>>>> b7b3f8cacfd2cffc148386c91331c460f779b8d0
                 </div>
               </div>
             </div>

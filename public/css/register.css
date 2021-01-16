@@ -44,10 +44,25 @@ h1 {
   width: 21%;
 }
 
+.signup-image
+{
+margin-top: 15px;
+margin-left: 45px;
+
+}
+
+.signup-image-link
+{
+font-size: 14px;
+color: #222;
+display: block;
+text-align: center;
+}
+
 .testbox {
   margin: 60px auto;
-  width: 343px;
-  height: 480px;
+  width: 700px;
+  height: 460px;
   -webkit-border-radius: 8px/7px;
   -moz-border-radius: 8px/7px;
   border-radius: 8px/7px;
@@ -56,9 +71,8 @@ h1 {
   -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   box-shadow: 1px 2px 5px rgba(0,0,0,.31);
   border: solid 1px #cbc9c9;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
-
 input[type=radio] {
   visibility: hidden;
 }
