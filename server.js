@@ -20,6 +20,7 @@ var UserPoscode = " ";
 var UserGender = " ";
 var UserPhone = " ";
 var UserSummary = " ";
+var Userprofile = " ";
 
 var ServiceType = " ";
 var ServiceName = " ";
@@ -71,7 +72,7 @@ const dataUser = new mongoose.Schema({
   userGender: String,
   userPhone: String,
   userSummary: String,
-
+  userProfile: String
 });
 
 const dataService = new mongoose.Schema({
@@ -126,6 +127,7 @@ app.post('/register', async (req, res) => {
     userGender: " ",
     userPhone: " ",
     userSummary: " ",
+    userProfile: " "
 
   });
 
@@ -165,7 +167,7 @@ app.post('/login', function(req, res) {
             UserGender = foundUser.userGender;
             UserPhone = foundUser.userPhone;
             UserSummary = foundUser.userSummary;
-
+            Userprofile = foundUser.userProfile;
             // ServiceType = foundUser.serviceTypes;
             // ServiceName = foundUser.serviceNames;
             // ServiceSummary = foundUser.serviceSummarys;
@@ -197,10 +199,23 @@ app.get("/UserProfile", function(req, res){
   Service.find({serviceEmail:UserEmail}, function(err, foundItems){
       console.log(foundItems);
       console.log(UserEmail);
-      res.render('UserProfile.ejs', {ServicesList:foundItems, Name: nameofUser, Email:UserEmail, FullName:UserFullName, Add1:UserAddr1, Add2:UserAddr2, City:UserCity, State:UserState, Postcode:UserPoscode, Gender:UserGender, PhoneNum:UserPhone, Summary:UserSummary});
+      res.render('UserProfile.ejs', {ServicesList:foundItems, Name: nameofUser, Email:UserEmail, FullName:UserFullName, Add1:UserAddr1, Add2:UserAddr2, City:UserCity, State:UserState, Postcode:UserPoscode, Gender:UserGender, PhoneNum:UserPhone, Summary:UserSummary, ImageProfile:Userprofile});
   })
 });
 
+app.post("/deleteData", function(req, res){
+
+  var itemtodelete = req.body.deleteItem;
+  Service.deleteOne({_id:req.body.deleteItem}, function(err){
+
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+      res.redirect("UserProfile");
+    }
+  })
+});
 ////////////////////////////////////////////////////
 
 app.delete('/logout', (req, res) => {
@@ -343,6 +358,14 @@ app.post('/updateInfo', function(req, res) {
     }
   });
 
+  User.updateOne({_id:UserID}, {userProfile: req.body.linkProfile}, function(err){
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Successful");
+    }
+  });
+
   res.redirect('/updateInfo')
 
 });
@@ -382,7 +405,7 @@ app.post('/securitylogin', function(req, res) {
               UserGender = foundUser.userGender;
               UserPhone = foundUser.userPhone;
               UserSummary = foundUser.userSummary;
-
+              Userprofile = foundUser.userProfile;
               // ServiceType = foundUser.serviceTypes;
               // ServiceName = foundUser.serviceNames;
               // ServiceSummary = foundUser.serviceSummarys;

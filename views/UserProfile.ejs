@@ -35,7 +35,7 @@
   <header id="header">
     <div class="d-flex flex-column">
       <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <img src="<%= ImageProfile %>" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="/UserProfile"><%= Name %></a></h1>
       </div>
       <nav class="nav-menu">
@@ -80,7 +80,7 @@
         </div>
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="<%= ImageProfile %>" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <h3><%= FullName %>.</h3>
@@ -113,26 +113,32 @@
       <div class="container">
         <div class="section-title">
           <h2>Service Information</h2>
-
           <div class="card-deck">
             <% for(var i=0; i<ServicesList.length; i++){  %>
+<<<<<<< HEAD
             <div class="card-grid" style="width: 18rem;">
               <div class="card">
+=======
+            <div class="card-grid">
+              <form class="deletedata" action="/deleteData" method="POST">
+              <div class="card" style="width: 18rem; margin-top:30px">
+>>>>>>> 6ebb0d65f0ace6e957a0031902a691060b9d2c2f
                 <div class="card-body">
                   <p><img src="<%= ServicesList[i].serviceImage %>" class="rounded mx-auto d-block" style="width:200px;height:200px;" alt="..."></p>
                   <p align="center" class="card-title" style="margin-top: 20px; font-family: Montserrat; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 500; color:black;"><%= ServicesList[i].serviceName %></p>
                   <p style="color:#dc3545; font-family: Arial; font-weight: 600; margin-top: 20px; font-size: 14px;">Price: RM <%= ServicesList[i].servicePrice %></p>
-                  <p class="card-text" style="margin-top: 10px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;"><%= ServicesList[i].serviceSummary %>.</p>
-                  <p class="card-text" style="margin-top: 2px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;">I am available at <%= ServicesList[i].serviceTime %>.</p>
-                  <p class="card-text" style="margin-top: 2px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;">You can call me at <%= ServicesList[i].servicePhone %>.</p>
+                  <p class="card-text" style="margin-top: 10px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;"><%= ServicesList[i].serviceSummary %></p>
+                  <p class="card-text" style="margin-top: 2px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;">I am available at <%= ServicesList[i].serviceTime %></p>
+                  <p class="card-text" style="margin-top: 2px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500;">You can call me at <%= ServicesList[i].servicePhone %></p>
                   <p style="margin-top: 10px; color:#964b00; font-family: Arial; font-size: 13px; font-weight: 500;">Area: <%= ServicesList[i].serviceArea %>, <%= ServicesList[i].serviceState %> </p>
                 </div>
-                <button type="button" class="btn btn-danger button-2">Delete</button>
+                  <input type="hidden" name="deleteItem" value="<%= ServicesList[i]._id %>">
+                  <button type="submit" class="btn btn-danger button-2">Delete</button>
                 <div class="card-footer">
                   <small class="text-muted"><%= ServicesList[i].serviceType %></small>
                 </div>
               </div>
-
+              </form>
             </div>
             <% } %>
           </div>
@@ -186,7 +192,7 @@
               <input type="text" class="form-control" id="servicephone" name="servicephone" placeholder="Please enter your business phone number" required>
             </div>
             <div class="col-md-12">
-              <label for="linkService" class="form-label">Please insert link of your service picture (no " ")</label>
+              <label for="linkService" class="form-label">Please insert link of your service picture ( no " " )</label>
               <textarea class="form-control" id="linkService" name="linkService" rows="1" placeholder="Link of Your Image Service" required></textarea>
             </div>
             <div class="col-12">
@@ -244,6 +250,10 @@
             <div class="col-md-12">
               <label for="exampleFormControlTextarea1" class="form-label">Short Summary About Yourself</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="<%= Summary %>" name="exampleFormControlTextarea1" rows="3" required></textarea>
+            </div>
+            <div class="col-md-12">
+              <label for="linkProfile" class="form-label">Please insert link of your profile picture ( no " " - The best image size is 500x500 pixels)</label>
+              <textarea class="form-control" id="linkProfile" name="linkProfile" rows="1" placeholder="<%= ImageProfile %>" required></textarea>
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-danger butupdate">Update</button>
