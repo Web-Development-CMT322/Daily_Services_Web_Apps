@@ -13,7 +13,7 @@
 
   <link rel="icon" href="mainImages/favicon.png" type="image/gif" sizes="16x16">
 
-  <link  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
   <section id="main_1">
     <div class="container-fluid">
       <div class="first-part">
@@ -38,46 +37,35 @@
       </div>
     </div>
   </section>
-
-<div class="testbox">
-<div class="row">
-
-    <div class="col-sm-6">
-
-      <div class="signup-image">
+  <div class="testbox">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="signup-image">
           <figure><img src="mainImages/signup-image.jpg" alt="sing up image"></figure>
           <a href="/login" class="signup-image-link">I am already member</a>
+        </div>
       </div>
-
+      <div class="col-sm-6">
+        <h1 class="registerheader" style="font-weight:500">Registration</h1>
+        <form action="/register" method="POST" class="form-register">
+          <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+          <div>
+            <label for="name" class="form-label"></label>
+            <input type="text" id="name" name="name" placeholder="Username" required>
+          </div>
+          <div>
+            <label for="email" class="form-label"></label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </div>
+          <div>
+            <label for="password" class="form-label"></label></label>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+          </div>
+          <button class="btn btn-primary submit-button" type="submit" style="margin-left:105px; margin-top: 20px;">Register</button>
+        </form>
+      </div>
     </div>
-
-    <div class="col-sm-6">
-
-    <h1 class="registerheader" style="font-weight:500">Registration</h1>
-
-    <form action="/register" method="POST" class="form-register">
-      <hr style="height:3px;border-width:0;color:gray;background-color:gray">
-
-      <div>
-        <label for="name" class="form-label"></label>
-        <input type="text" id="name" name="name" placeholder="Username" required>
-      </div>
-      <div>
-        <label for="email" class="form-label"></label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-      </div>
-      <div>
-        <label for="password" class="form-label"></label></label>
-        <input type="password" id="password" name="password" placeholder="Password" required>
-      </div>
-
-      <button class="btn btn-primary submit-button" type="submit"style="margin-left:105px; margin-top: 20px;">Register</button>
-    </form>
-
-    </div>
-
-
-</div>
   </div>
 </body>
+
 </html>

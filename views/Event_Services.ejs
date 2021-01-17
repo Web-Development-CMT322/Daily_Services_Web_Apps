@@ -47,6 +47,9 @@
             <div class="card-footer">
               <small class="text-muted"><%= EventList[i].serviceType %></small>
             </div>
+            <button type="button" name="button" onclick="window.open('https://wa.me/<%= PersonalList[i].servicePhone %>');" style="background-color:#25D366; margin-left:110px; margin-right:110px; margin-top:20px; margin-bottom:15px; border-radius: 70%; padding: 17px;">
+              <i class="fab fa-whatsapp fa-lg" style="color:#fff"></i>
+            </button>
           </div>
           <% } %>
         </div>

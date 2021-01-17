@@ -108,207 +108,32 @@
 
   <section id="main_3">
     <h4>Services</h4>
-    <div class="container-fluid">
-
-      <p class="card-row1">
+    <div class="container">
       <div class="card-deck">
         <div class="card-grid">
-
-          <div class="card">
+          <% for(var i=0; i<AllServices.length; i++){  %>
+          <div class="card" style="width: 18rem; margin-top:30px; margin-left: 60px;">
             <div class="card-body">
-              <p><img src="images/card-plumber.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
+              <p><img src="<%= AllServices[i].serviceImage %>" class="rounded mx-auto d-block" style="width:200px;height:200px;" alt="..."></p>
+              <p align="center" class="card-title" style="margin-top: 20px; font-family: Arial; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 500; color:black;"><%= AllServices[i].serviceName %></p>
+              <p style="color:#dc3545; font-family: Arial; font-weight: 600; margin-top: 20px; font-size: 14px;">Price: RM <%= AllServices[i].servicePrice %></p>
+              <p class="card-text" style="margin-top: 10px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500; line-height: 1.4;"><%= AllServices[i].serviceSummary %></p>
             </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
+            <div class="givestyle" style="line-height: 1.0; margin-top: 10px;">
+              <p style="margin-bottom: 10px; margin-left:20px; color:#964b00; font-family: Arial; font-size: 13px; font-weight: 500;">Area: <%= AllServices[i].serviceArea %>, <%= AllServices[i].serviceState %> </p>
+            </div>
             <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
+              <small class="text-muted"><%= AllServices[i].serviceType %></small>
             </div>
           </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-delivery.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-tutor.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-carpentry.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-cleaner.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-photographer.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-wedding.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-barber.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-aircond.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-carpentry.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-handyman.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <p><img src="images/card-electrical.jpg" class="card-img-top" alt="..."></p>
-              <p align="center" class="card-title">Title</p>
-              <p class="card-text">Description</p>
-              <p>Price</p>
-              </p>Location</p>
-              </p>Rating</p>
-            </div>
-            <button type="button" class="btn btn-danger button-2">Get Service</button>
-            <div class="card-footer">
-              <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-          </div>
-
-          <!-- KALAU NAK ADD LAGI CARD LETAK KAT SINI  -->
-
-
+          <% } %>
         </div>
       </div>
-      </p>
-
-
     </div>
   </section>
-
-
   <section id="main_4">
     <div class="testimonial">
-      <p class="main_4_title" align="center">Let's Hear!</p>
+      <p class="main_4_title" align="center" style="padding-top:40px">Let's Hear!</p>
       <p class="main_4_caption" align="center">Hundreds of thousands of users have found and hired great service providers
         <br />from Daily Service
       </p>
@@ -322,7 +147,7 @@
         </ul>
 
         <!-- The slideshow -->
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="padding-top: 50px;">
           <div class="carousel-item active">
             <img src="images/card-aircond.jpg" alt="1" width="500" height="500">
             <div class="carousel-caption">
@@ -356,16 +181,8 @@
           <span class="carousel-control-next-icon"></span>
         </a>
       </div>
-
-
     </div>
-
   </section>
-
-  <section id="main_5">
-
-  </section>
-
 </body>
 
 <footer class="footer">
@@ -377,12 +194,9 @@
         <p class="mb10">Daily Services is the best way to hire local service
           professionals for your home or office. Save your time
           by booking your services using this app.</p>
-
         <p><i class="fa fa-location-arrow"></i> USM, 1800 Gelugor, Penang, Malaysia </p>
         <p><i class="fa fa-phone"></i> +604 12345678 </p>
         <p><i class="fa fa fa-envelope"></i> info@dailyservices.com </p>
-
-
       </div>P
 
       <div class=" col-sm-4 col-md  col-6 col">
@@ -393,12 +207,9 @@
           <li><a href="http://webenlance.com">Home Services</a></li>
           <li><a href="http://webenlance.com">Children services</a></li>
           <li><a href="http://webenlance.com">Event Services</a></li>
-
         </ul>
         <!--footer_ul_amrc ends here-->
       </div>
-
-
       <div class=" col-sm-4 col-md  col-6 col">
         <h5 class="headin5_amrc col_white_amrc pt2">Why Us?</h5>
         <!--headin5_amrc-->
@@ -410,17 +221,11 @@
             <li>✓ Assuarance </li>
           </p>
         </ul>
-
-
-
         <!--footer_ul_amrc ends here-->
       </div>
-
-
       <div class=" col-sm-4 col-md  col-12 col">
         <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
         <!--headin5_amrc ends here-->
-
         <ul class="footer_ul2_amrc">
           <li><a href="#"><i class="fab fa-facebook fleft padding-right"></i> </a>
             <p> Facebook <a href="#">https://www.facebook.com/</a></p>
@@ -439,7 +244,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="container">
     <ul class="foote_bottom_ul_amrc">

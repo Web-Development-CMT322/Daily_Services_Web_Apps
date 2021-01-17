@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
   <section id="main_1">
     <div class="container-fluid">
       <div class="first-part">
@@ -31,12 +30,10 @@
       </div>
     </div>
   </section>
-
   <div class="testbox">
     <h1 class="registerheader" style="font-weight:500">Data Validation</h1>
     <form action="/securitylogin" method="POST">
       <hr style="height:3px;border-width:0;color:gray;background-color:gray">
-
       <div>
         <label for="email" class="form-label"></label>
         <input type="email" id="emailvalid" name="emailvalid" placeholder="Email" required>
@@ -46,7 +43,6 @@
         <input type="password" id="passwordvalid" name="passwordvalid" placeholder="Password" required>
       </div>
       <button class="btn btn-primary submit-button" type="submit" style="margin-left:105px; margin-top: 20px;">Submit</button>
-
       <p><%= wrongemail %></p>
     </form>
   </div>

@@ -6,6 +6,7 @@
   <%- include("LinkDesign"); -%>
   <link rel="stylesheet" href="css/Home_Services.css">
   <title>Personal Services</title>
+
 </head>
 
 <body>
@@ -35,7 +36,7 @@
           <div class="card" style="width: 18rem; margin-top:30px; margin-left: 60px;">
             <div class="card-body">
               <p><img src="<%= PersonalList[i].serviceImage %>" class="rounded mx-auto d-block" style="width:200px;height:200px;" alt="..."></p>
-              <p align="center" class="card-title"  style="margin-top: 20px; font-family: Arial; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 500; color:black;"><%= PersonalList[i].serviceName %></p>
+              <p align="center" class="card-title" style="margin-top: 20px; font-family: Arial; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 500; color:black;"><%= PersonalList[i].serviceName %></p>
               <p style="color:#dc3545; font-family: Arial; font-weight: 600; margin-top: 20px; font-size: 14px;">Price: RM <%= PersonalList[i].servicePrice %></p>
               <p class="card-text" style="margin-top: 10px; font-family: Arial; font-size: 14px; color:#43464b; font-weight: 500; line-height: 1.4;"><%= PersonalList[i].serviceSummary %></p>
             </div>
@@ -44,9 +45,9 @@
               <p class="card-text" style="margin-bottom: 5px; margin-left:20px; color:#dc3545; font-family: Arial; font-size: 14px; font-weight: 500;">You can call me at <%= PersonalList[i].servicePhone %></p>
               <p style="margin-bottom: 10px; margin-left:20px; color:#964b00; font-family: Arial; font-size: 13px; font-weight: 500;">Area: <%= PersonalList[i].serviceArea %>, <%= PersonalList[i].serviceState %> </p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted"><%= PersonalList[i].serviceType %></small>
-            </div>
+            <button type="button" name="button" onclick="window.open('https://wa.me/<%= PersonalList[i].servicePhone %>');" style="background-color:#25D366; margin-left:110px; margin-right:110px; margin-top:20px; margin-bottom:15px; border-radius: 70%; padding: 17px;">
+              <i class="fab fa-whatsapp fa-lg" style="color:#fff"></i>
+            </button>
           </div>
           <% } %>
         </div>

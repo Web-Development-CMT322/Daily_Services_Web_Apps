@@ -195,7 +195,7 @@ h4 {
   height: 40px;
   padding-left: 12px;
   padding-top: 3px;
-  margin-top: 12px;
+  margin-top: 42px;
 }
 
 h4::after {
@@ -228,7 +228,7 @@ h4::after {
 /* Make the image fully responsive */
 .carousel-inner img {
   width: 50%;
-  height: 50%;
+  height: 60%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -392,6 +392,7 @@ footer {
   padding: 10px 0px 25px 0px;
   padding-left: 12%;
   padding-right: 12%;
+  padding-top: 100px;
 }
 
 .pt2 {

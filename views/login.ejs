@@ -10,7 +10,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
   <link href="css/login.css" rel="stylesheet">
-  <link  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -37,23 +37,17 @@
   </section>
 
   <div class="testbox">
-
     <div class="row">
       <div class="col-sm-6">
-
         <div class="signin-image">
-            <figure><img src="mainImages/signin-image.jpg" alt="sing in image"></figure>
-            <a href="/register" class="signin-image-link">Create an account</a>
+          <figure><img src="mainImages/signin-image.jpg" alt="sing in image"></figure>
+          <a href="/register" class="signin-image-link">Create an account</a>
         </div>
-
       </div>
       <div class="col-sm-6">
-
         <h1 class="registerheader" style="font-weight:500">Sign In</h1>
-
         <form action="/login" method="POST">
           <hr style="height:3px;border-width:0;color:gray;background-color:gray">
-
           <div>
             <label for="email" class="form-label"></label>
             <input type="email" id="email" name="email" placeholder="Email" required>
@@ -63,18 +57,10 @@
             <input type="password" id="password" name="password" placeholder="Password" required>
           </div>
           <button class="btn btn-primary submit-button" type="submit" style="margin-left:105px; margin-top: 20px;">Log In</button>
-
           <p><%= messages %></p>
         </form>
-
       </div>
-
     </div>
-
-
-
-
   </div>
 </body>
-
 </html>
