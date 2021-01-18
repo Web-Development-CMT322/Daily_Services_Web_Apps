@@ -44,10 +44,7 @@
               <p class="card-text" style="margin-bottom: 5px; margin-left:20px; color:#dc3545; font-family: Arial; font-size: 14px; font-weight: 500;">You can call me at <%= EventList[i].servicePhone %></p>
               <p style="margin-bottom: 10px; margin-left:20px; color:#964b00; font-family: Arial; font-size: 13px; font-weight: 500;">Area: <%= EventList[i].serviceArea %>, <%= EventList[i].serviceState %> </p>
             </div>
-            <div class="card-footer">
-              <small class="text-muted"><%= EventList[i].serviceType %></small>
-            </div>
-            <button type="button" name="button" onclick="window.open('https://wa.me/<%= PersonalList[i].servicePhone %>');" style="background-color:#25D366; margin-left:110px; margin-right:110px; margin-top:20px; margin-bottom:15px; border-radius: 70%; padding: 17px;">
+            <button type="button" name="button" onclick="window.open('https://wa.me/<%= EventList[i].servicePhone %>');" style="background-color:#25D366; margin-left:110px; margin-right:110px; margin-top:20px; margin-bottom:15px; border-radius: 70%; padding: 17px;">
               <i class="fab fa-whatsapp fa-lg" style="color:#fff"></i>
             </button>
           </div>
