@@ -36,6 +36,16 @@ h1 {
   width: 21%;
 }
 
+
+.security-image
+{
+  padding-top: 20px;
+margin-top: 35px;
+margin-left: 45px;
+
+}
+
+
 .testbox {
   margin: 60px auto;
   width: 343px;
