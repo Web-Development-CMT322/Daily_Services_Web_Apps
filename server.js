@@ -33,7 +33,7 @@ var ServicePhone = " ";
 var ServiceImage = " ";
 var WhatsappLink = " ";
 
-const bodyParser = require("body-parser");;
+const bodyParser = require("body-parser");
 const express = require("express");
 const https = require("https");
 const ejs = require("ejs")
